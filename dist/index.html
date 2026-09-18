@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08131f">
+  <meta name="description" content="從社會學想像、五個概念工具，到馬克思、涂爾幹與韋伯的互動式課堂報告。">
+  <title>用社會學重新看日常</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308131f'/%3E%3Ccircle cx='27' cy='27' r='14' fill='none' stroke='%23ffd76a' stroke-width='6'/%3E%3Cpath d='M38 38L53 53' stroke='%23ff6b5f' stroke-width='7' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root{--ink:#eef5f8;--muted:#aebcc7;--night:#08131f;--panel:#102232;--panel2:#142a3c;--line:#294458;--gold:#ffd76a;--coral:#ff6b5f;--cyan:#62d8e8;--green:#8bd6a5;--purple:#bfa8ff;--max:1180px;--shadow:0 24px 70px rgba(0,0,0,.28)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:72px}
+    body{margin:0;background:var(--night);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:17px;line-height:1.75;overflow-x:hidden}
+    button,input{font:inherit}
+    button{color:inherit}
+    a{color:inherit}
+    .skip{position:fixed;left:12px;top:-60px;background:var(--gold);color:#17202a;padding:.7rem 1rem;border-radius:0 0 10px 10px;z-index:100;text-decoration:none;font-weight:800}.skip:focus{top:0}
+    .topbar{position:fixed;inset:0 0 auto;z-index:50;height:58px;background:rgba(8,19,31,.88);backdrop-filter:blur(18px);border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center}
+    .topbar-inner{width:min(var(--max),calc(100% - 36px));margin:auto;display:flex;align-items:center;gap:18px}
+    .brand{font-weight:900;letter-spacing:.06em;white-space:nowrap}.brand i{color:var(--gold);font-style:normal}
+    .progress-track{height:4px;background:#203548;flex:1;border-radius:10px;overflow:hidden}.progress{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--gold),var(--coral));transition:width .2s}
+    .section-count{font:700 .78rem/1 ui-monospace,SFMono-Regular,monospace;color:var(--muted);white-space:nowrap}
+    .side-dots{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:40;display:grid;gap:10px}
+    .side-dots a{width:11px;height:11px;border-radius:50%;background:#456073;border:2px solid var(--night);outline:1px solid #456073;transition:.2s}.side-dots a.active{background:var(--gold);outline-color:var(--gold);transform:scale(1.25)}
+    main{padding-top:58px}
+    section{min-height:calc(100svh - 58px);display:grid;align-items:center;padding:72px 28px;position:relative;border-bottom:1px solid rgba(255,255,255,.06);overflow:hidden}
+    .wrap{width:min(var(--max),100%);margin:auto;position:relative;z-index:2}
+    .kicker{font:800 .78rem/1.3 ui-monospace,SFMono-Regular,monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin:0 0 18px}
+    h1,h2,h3,p{margin-top:0}h1,h2{line-height:1.12;letter-spacing:-.035em}h1{font-size:clamp(3rem,8vw,7.5rem);max-width:930px;margin-bottom:28px}h2{font-size:clamp(2.35rem,5.5vw,5.5rem);margin-bottom:20px}h3{font-size:1.35rem;line-height:1.35}
+    .lead{font-size:clamp(1.08rem,2vw,1.35rem);color:#cbd7df;max-width:760px;line-height:1.7}
+    .accent{color:var(--gold)}.coral{color:var(--coral)}.cyan{color:var(--cyan)}
+    .eyebrow{display:inline-flex;gap:10px;align-items:center;padding:.35rem .7rem;border:1px solid var(--line);border-radius:999px;color:#c8d5dc;font-size:.82rem;margin-bottom:22px}.eyebrow b{color:var(--gold)}
+    .hero{background:radial-gradient(circle at 75% 28%,rgba(98,216,232,.15),transparent 25%),linear-gradient(150deg,#08131f 40%,#0b1d2c)}
+    .hero:after{content:"";position:absolute;width:52vw;height:52vw;max-width:700px;max-height:700px;border:1px solid rgba(98,216,232,.14);border-radius:50%;right:-18vw;bottom:-28vw;box-shadow:0 0 0 7vw rgba(98,216,232,.025),0 0 0 14vw rgba(255,215,106,.02)}
+    .hero .lead{margin-bottom:34px}
+    .action{border:0;background:var(--gold);color:#111c25;padding:.85rem 1.25rem;border-radius:12px;font-weight:900;cursor:pointer;box-shadow:0 8px 30px rgba(255,215,106,.18);transition:.18s}.action:hover{transform:translateY(-2px)}.action:focus-visible,.tab:focus-visible,.tool-btn:focus-visible{outline:3px solid white;outline-offset:3px}
+    .ghost{background:transparent;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+    .zoom-stage{margin-top:34px;border:1px solid var(--line);background:rgba(16,34,50,.72);border-radius:22px;padding:22px;max-width:860px;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr;gap:12px}
+    .person-row{display:flex;align-items:center;gap:14px}.person{width:46px;height:46px;border-radius:50%;background:var(--coral);display:grid;place-items:center;color:#1b1717;font-weight:950}.person-copy strong{display:block}.person-copy small{color:var(--muted)}
+    .context-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-height:0;opacity:0;overflow:hidden;transition:max-height .55s ease,opacity .35s ease,margin .35s}.zoom-stage.open .context-grid{max-height:180px;opacity:1;margin-top:10px}.context{padding:13px;border-radius:12px;background:#173047;border:1px solid #254b66;color:#d9e5ec;font-size:.9rem}.context b{color:var(--cyan);display:block;font-size:.75rem;letter-spacing:.08em}
+    .quote{border-left:4px solid var(--gold);padding:8px 0 8px 22px;font-size:clamp(1.25rem,2.8vw,2rem);font-weight:800;max-width:900px;line-height:1.45}
+    .case-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:start;margin-top:40px}
+    .scene-card{background:linear-gradient(145deg,#173146,#102333);border:1px solid var(--line);border-radius:24px;padding:28px;min-height:420px;box-shadow:var(--shadow);position:relative;overflow:hidden}.scene-card:before{content:"FIELD NOTE / 01";position:absolute;right:-26px;top:35px;transform:rotate(90deg);font:700 .67rem/1 monospace;letter-spacing:.13em;color:#648096}.scene-card .stamp{display:inline-block;border:2px solid var(--coral);color:var(--coral);font-weight:900;font-size:.75rem;padding:.25rem .55rem;transform:rotate(-2deg);margin-bottom:24px}.scene-card p{color:#c4d1d9}.scene-card .dream{padding:12px 15px;background:#0c1d2b;border-radius:10px;border-left:3px solid var(--gold);margin-top:16px;font-size:.93rem}
+    .tool-area h3{margin-bottom:14px}.tool-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}.tool-btn,.tab{border:1px solid var(--line);background:#102536;padding:.65rem .9rem;border-radius:10px;cursor:pointer;font-weight:800;transition:.18s}.tool-btn:hover,.tab:hover{border-color:#6f8ca0}.tool-btn.active{background:var(--gold);color:#17202a;border-color:var(--gold)}
+    .tool-detail{background:#0d1f2d;border:1px solid var(--line);border-radius:18px;padding:24px;min-height:252px;position:relative}.tool-detail .num{position:absolute;right:18px;top:8px;font:900 4.2rem/1 ui-monospace,monospace;color:rgba(255,255,255,.05)}.tool-detail h3{font-size:1.6rem;color:var(--gold);margin-bottom:10px}.tool-detail .game{color:var(--cyan);font-weight:800}.tool-detail p{color:#c4d1d9}
+    .history{background:linear-gradient(180deg,#0b1925,#0d2230)}
+    .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}.timeline:before{content:"";position:absolute;left:5%;right:5%;top:18px;height:2px;background:#345267}.time-item{padding:0 16px;text-align:center;position:relative}.time-dot{width:38px;height:38px;margin:0 auto 20px;border-radius:50%;border:2px solid var(--cyan);background:var(--night);display:grid;place-items:center;color:var(--cyan);font-size:.8rem;font-weight:900;position:relative;z-index:2}.time-item h3{font-size:1.06rem;margin-bottom:8px}.time-item p{font-size:.9rem;color:var(--muted);line-height:1.55}
+    .thinker-section{background:radial-gradient(circle at 15% 90%,rgba(255,107,95,.09),transparent 25%),#08131f}
+    .tabs{display:flex;gap:10px;margin:30px 0 22px;flex-wrap:wrap}.tab[aria-selected="true"]{background:var(--tab-color);border-color:var(--tab-color);color:#07121c}.thinker-panel{border:1px solid var(--line);border-radius:26px;background:#102334;display:grid;grid-template-columns:.72fr 1.28fr;min-height:430px;overflow:hidden;box-shadow:var(--shadow)}
+    .thinker-symbol{background:var(--thinker-color);color:#07121c;display:grid;place-items:center;padding:30px;text-align:center}.thinker-symbol .big{font:950 clamp(4rem,12vw,9rem)/1 ui-monospace,monospace}.thinker-symbol small{font-weight:900;letter-spacing:.12em}
+    .thinker-copy{padding:clamp(28px,5vw,56px)}.thinker-copy h3{font-size:clamp(1.9rem,4vw,3.4rem);margin-bottom:8px}.thinker-copy .question{font-size:clamp(1.25rem,2.6vw,1.8rem);font-weight:900;line-height:1.45;margin:22px 0;color:var(--thinker-color)}.thinker-copy p{color:#c5d2da}.tags{display:flex;gap:8px;flex-wrap:wrap}.tags span{border:1px solid #3a5569;border-radius:999px;padding:.3rem .65rem;font-size:.8rem;color:#d3dfe5}
+    .case-lab{background:linear-gradient(145deg,#0d1c28,#08131f)}
+    .lab-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:30px;align-items:stretch;margin-top:34px}.meeting{background:#e9eef0;color:#16222b;border-radius:24px;padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}.meeting:before{content:"小組聊天室";display:block;font-size:.78rem;font-weight:900;color:#64747e;margin-bottom:24px}.bubble{padding:12px 15px;border-radius:15px;background:white;margin:10px 0;max-width:88%;font-size:.92rem;box-shadow:0 3px 10px rgba(8,19,31,.07)}.bubble.me{margin-left:auto;background:#ccecf1}.bubble.alert{background:#ffdcd7;border:1px solid #ff9d92}.score{margin-top:24px;padding:14px;border:2px dashed #6d7d87;text-align:center;font-weight:900}.score b{font-size:1.8rem;color:#d44337}
+    .lens-console{border:1px solid var(--line);background:#102334;border-radius:24px;padding:26px}.lens-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.lens-tabs .tab{padding:.75rem .45rem}.lens-result{margin-top:24px;min-height:320px}.lens-label{font:800 .72rem/1.2 monospace;letter-spacing:.15em;color:var(--muted)}.lens-result h3{font-size:2rem;margin:10px 0;color:var(--lens-color)}.lens-result .main-q{font-size:1.28rem;font-weight:900;border-left:4px solid var(--lens-color);padding-left:16px}.lens-result ul{padding-left:1.2rem;color:#c4d1d9}.lens-result li{margin:.45rem 0}.lens-result .move{background:#0b1d2a;padding:13px 15px;border-radius:11px;color:#d8e4ea;font-weight:700}
+    .compare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px}.compare-card{border-top:5px solid var(--c);background:#102334;border-radius:0 0 18px 18px;padding:24px}.compare-card h3{color:var(--c);margin-bottom:12px}.compare-card p{color:#c1cfd7}.compare-card strong{display:block;color:var(--ink);margin-bottom:10px}
+    .camera-stage{margin-top:40px;border:1px solid var(--line);border-radius:26px;background:#102334;overflow:hidden;box-shadow:var(--shadow)}.camera-controls{padding:24px 28px;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}.camera-controls label{font-weight:900}.camera-controls input{accent-color:var(--gold);width:100%}.camera-view{padding:clamp(28px,5vw,54px);min-height:330px;position:relative}.scale-badge{display:inline-block;padding:.35rem .7rem;border-radius:999px;background:var(--scale-color);color:#0b1820;font-weight:900;font-size:.78rem}.camera-view h3{font-size:clamp(2rem,5vw,4rem);margin:18px 0 12px}.camera-view p{max-width:760px;color:#c5d2da;font-size:1.08rem}.focus-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}.focus-list span{border:1px solid #3c586b;border-radius:10px;padding:.45rem .7rem;font-size:.88rem}
+    .final{background:radial-gradient(circle at 50% 42%,rgba(255,215,106,.13),transparent 28%),#08131f;text-align:center}.final .wrap{display:grid;justify-items:center}.final h2{max-width:970px}.final .lead{max-width:810px}.final-question{margin:34px auto 0;max-width:760px;padding:24px;border:1px solid var(--gold);border-radius:18px;background:rgba(255,215,106,.05);font-size:1.15rem;font-weight:800}.next{margin-top:36px;color:var(--muted);font-size:.9rem}.next b{color:var(--coral)}
+    .keyhint{position:fixed;left:18px;bottom:14px;z-index:35;color:#6e8493;font-size:.7rem;font-family:monospace}.keyhint kbd{border:1px solid #334d5e;border-radius:4px;padding:2px 5px;background:#102334}
+    @media(max-width:820px){body{font-size:16px}.side-dots,.keyhint{display:none}.section-count{display:none}section{padding:64px 20px;min-height:auto}.hero{min-height:calc(100svh - 58px)}h1{font-size:clamp(2.7rem,14vw,5rem)}.case-grid,.lab-grid,.thinker-panel{grid-template-columns:1fr}.scene-card{min-height:auto}.thinker-symbol{min-height:210px}.timeline{grid-template-columns:1fr 1fr;gap:26px 4px}.timeline:before{display:none}.compare-grid{grid-template-columns:1fr}.context-grid{grid-template-columns:1fr 1fr}.zoom-stage.open .context-grid{max-height:340px}.camera-controls{grid-template-columns:auto 1fr;gap:12px}.camera-controls span:last-child{grid-column:2;text-align:right}.lens-tabs{grid-template-columns:1fr}.lens-result{min-height:0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">跳到主要內容</a>
+  <header class="topbar" aria-label="閱讀進度">
+    <div class="topbar-inner"><div class="brand">社會學<i>觀察室</i></div><div class="progress-track"><div class="progress" id="progress"></div></div><div class="section-count" id="sectionCount">01 / 08</div></div>
+  </header>
+  <nav class="side-dots" aria-label="章節導覽"></nav>
+  <div class="keyhint"><kbd>←</kbd> <kbd>→</kbd> 切換章節</div>
+  <main id="main">
+    <section class="hero" id="intro" data-title="社會學想像">
+      <div class="wrap">
+        <div class="eyebrow"><b>01</b> 從日常開始</div>
+        <h1>一件事，<br><span class="accent">不只一種解釋。</span></h1>
+        <p class="lead">社會學的想像，是把個人的生活經驗，連回家庭、教育、職業、團體，以及整個時代。</p>
+        <button class="action" id="zoomBtn" aria-expanded="false" aria-controls="zoomStage">把視角拉遠</button>
+        <div class="zoom-stage" id="zoomStage">
+          <div class="person-row"><div class="person">我</div><div class="person-copy"><strong>「這是我自己的選擇。」</strong><small>先從個人經驗出發</small></div></div>
+          <div class="context-grid" aria-live="polite">
+            <div class="context"><b>家庭資源</b>我有哪些選擇？</div><div class="context"><b>教育制度</b>哪些道路被認可？</div><div class="context"><b>團體關係</b>誰影響我的行動？</div><div class="context"><b>時代變化</b>現在提供哪些可能？</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" data-title="五個概念工具">
+      <div class="wrap">
+        <p class="kicker">02 / Field note</p><h2>一場說明會，<br><span class="accent">五種觀察線索。</span></h2>
+        <div class="case-grid">
+          <article class="scene-card"><div class="stamp">現場觀察</div><h3>台積電築夢計畫說明會</h3><p>企業提供資金與導師，學生提出想實現的夢想。看起來是多贏，但每一種夢想，都同樣容易被看見嗎？</p><div class="dream">青春、有自信、表達流利，並能把個人目標連上更大的社會價值。</div><p style="margin-top:18px">這種「容易被辨認的夢想」，背後可能還累積了家庭經濟、教育、外語、簡報與實踐經驗。</p></article>
+          <div class="tool-area"><h3>選一副鏡片拆解現場</h3><div class="tool-buttons" role="tablist" aria-label="五個社會學概念"></div><div class="tool-detail" id="toolDetail" role="tabpanel" aria-live="polite"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history" id="history" data-title="社會學的誕生">
+      <div class="wrap"><p class="kicker">03 / 19th century Europe</p><h2>三個人走進<br><span class="cyan">同一座現代城市。</span></h2><p class="lead">工業革命之後，城市快速擴張；階級衝突、傳統關係鬆動與科學發展，同時改變了人們理解社會的方式。</p>
+        <div class="timeline"><div class="time-item"><div class="time-dot">01</div><h3>機器與工廠</h3><p>生產加速、市場擴大，資本主義逐漸形成。</p></div><div class="time-item"><div class="time-dot">02</div><h3>城市與階級</h3><p>繁榮與貧窮並存，勞工問題浮上檯面。</p></div><div class="time-item"><div class="time-dot">03</div><h3>關係的鬆動</h3><p>宗教、家庭與地方共同體的影響開始改變。</p></div><div class="time-item"><div class="time-dot">04</div><h3>科學的野心</h3><p>既然能研究自然，我們能不能也研究社會？</p></div></div>
+      </div>
+    </section>
+
+    <section class="thinker-section" id="thinkers" data-title="三大社會學傳統">
+      <div class="wrap"><p class="kicker">04 / Three lenses</p><h2>他們看到同一個時代，<br><span class="accent">卻提出不同問題。</span></h2><div class="tabs" id="thinkerTabs" role="tablist" aria-label="選擇社會學家"></div><div class="thinker-panel" id="thinkerPanel" role="tabpanel" aria-live="polite"></div></div>
+    </section>
+
+    <section class="case-lab" id="case" data-title="分組報告實驗室">
+      <div class="wrap"><p class="kicker">05 / Case laboratory</p><h2>分組報告有人擺爛，<br><span class="coral">到底是誰的問題？</span></h2><p class="lead">同一段現場紀錄，交給三位社會學家。先別急著下判斷，切換鏡頭看看。</p>
+        <div class="lab-grid"><div class="meeting"><div class="bubble">今晚八點開會，大家可以嗎？</div><div class="bubble alert">他又沒有出現，資料也沒交。</div><div class="bubble me">先把他的部分分掉吧，不然來不及。</div><div class="bubble">報告完成了，但所有人拿到相同分數。</div><div class="score">共同評分：每個人都是 <b>88</b> 分</div></div><div class="lens-console"><div class="lens-tabs" id="lensTabs" role="tablist" aria-label="切換分析視角"></div><div class="lens-result" id="lensResult" role="tabpanel" aria-live="polite"></div></div></div>
+      </div>
+    </section>
+
+    <section id="compare" data-title="三種視角比較">
+      <div class="wrap"><p class="kicker">06 / Compare</p><h2>不是搶標準答案，<br><span class="accent">而是補上彼此的盲點。</span></h2><div class="compare-grid"><article class="compare-card" style="--c:var(--coral)"><h3>馬克思</h3><strong>看見不平等、權力與利益衝突</strong><p>但只看分配，可能還不知道每位組員如何理解自己的行動。</p></article><article class="compare-card" style="--c:var(--cyan)"><h3>涂爾幹</h3><strong>發現穩定規律與制度影響</strong><p>但群體統計不一定能告訴我們，每個人為什麼這樣做。</p></article><article class="compare-card" style="--c:var(--purple)"><h3>韋伯</h3><strong>深入理解人的處境與意義</strong><p>但如果停在個人故事，也可能看不見反覆出現的制度問題。</p></article></div><p class="quote" style="margin-top:52px">一件事情，可以同時有<span class="coral">個人動機</span>、<span class="cyan">團體規律</span>與<span class="accent">權力分配</span>三個層面。</p></div>
+    </section>
+
+    <section id="scale" data-title="微視與巨視">
+      <div class="wrap"><p class="kicker">07 / Change the scale</p><h2>轉動鏡頭，<br><span class="cyan">社會就換一種形狀。</span></h2><p class="lead">社會學的分化，不是把世界切成互不相關的小塊，而是依照問題，選擇適合的距離與專業角度。</p><div class="camera-stage"><div class="camera-controls"><label for="scaleRange">拉近</label><input id="scaleRange" type="range" min="0" max="2" value="0" step="1" aria-label="調整微視到巨視的觀察尺度"><span>拉遠</span></div><div class="camera-view" id="cameraView" aria-live="polite"></div></div></div>
+    </section>
+
+    <section class="final" id="final" data-title="回到日常">
+      <div class="wrap"><p class="kicker">08 / Keep questioning</p><h2>社會學，不是把人變成答案。<br><span class="accent">而是讓問題變得更完整。</span></h2><p class="lead">如果只看個人，我們可能把制度造成的問題解釋成人格問題；如果只看制度，也可能忽略每個人如何理解自己的經驗，以及他仍然可以採取什麼行動。</p><div class="final-question">什麼樣的人算「好組員」？這個看似自然的標準，是誰形成、如何變成規範，又受到什麼權力影響？</div><p class="next">下一章：<b>文化</b>——我們共同接受的玩法，從哪裡來？</p></div>
+    </section>
+  </main>
+  <script>
+    const tools=[
+      {name:'社會行動',game:'玩家的操作',text:'企業希望實踐社會責任、建立品牌形象；學生希望取得資金、導師與實踐機會。每一方都帶著目的採取行動。'},
+      {name:'社會結構',game:'角色與資源配置',text:'企業站在提供資源、制定評選標準的位置；學生站在申請與競爭資源的位置。位置不同，可使用的資源也不同。'},
+      {name:'文化',game:'被共同接受的玩法',text:'什麼樣的表達會被認為「有夢想、有潛力、值得投資」？明文規則之外，還有一套沒有寫下來的默契。'},
+      {name:'權力',game:'誰能制定規則',text:'掌握經費與選擇權的一方，也能決定哪些夢想得到實踐與公開展示的機會。多贏，不代表每一方擁有同等決定權。'},
+      {name:'社會體系',game:'所有部分如何連動',text:'企業提供資金、導師與聲望；學生投入時間、產出成果；大眾再把「入選」當成可靠背書，形成資源、行動與認可的循環。'}
+    ];
+    const thinkers=[
+      {id:'marx',name:'馬克思',symbol:'M',scene:'走進工廠',color:'var(--coral)',question:'誰在勞動？誰在決定？誰取得成果？',text:'商品價值來自勞動，但擁有生產工具的人掌握成果分配。馬克思不只想描述資本主義的矛盾；他要讓無產階級理解共同處境，形成集體力量，改變生產關係。',tags:['階級','勞動價值','權力','衝突','革命實踐']},
+      {id:'durkheim',name:'涂爾幹',symbol:'D',scene:'拿起統計資料',color:'var(--cyan)',question:'這真的是個人問題，還是反覆出現的社會模式？',text:'看似最私人的行為，也可能呈現穩定的群體差異。規範、制度與集體意識形成後，會像存在於個人之外的力量，反過來約束個人。',tags:['社會事實','規範','統計','秩序','群體連結']},
+      {id:'weber',name:'韋伯',symbol:'W',scene:'走進人的意義世界',color:'var(--purple)',question:'你為什麼這樣做？這件事對你代表什麼？',text:'人會賦予行動意義。研究者要先進入行動者的角度，理解他的主觀意義，再解釋許多有意義的行動，如何累積成更大的社會結果。',tags:['Verstehen','主觀意義','動機','宗教倫理','社會結果']}
+    ];
+    const lenses={
+      marx:{label:'勞動 × 權力 × 成果',title:'先看分配',question:'勞動、決定權與成果，有沒有落在同一群人手上？',points:['誰實際做了最多工作？','誰掌握題目、內容與上台發言？','為什麼沒有貢獻的人仍取得相同分數？'],move:'不只要求「下次更負責」，而是改變分工、決策、貢獻透明度與評分規則。',color:'var(--coral)'},
+      durkheim:{label:'模式 × 規範 × 制度',title:'先問每組都這樣嗎？',question:'什麼樣的團體與制度，比較容易反覆產生擺爛？',points:['共同評分還是個別評分？','有沒有同儕互評與清楚分工？','違反責任規範時，是否需要承擔後果？'],move:'蒐集不同小組的資料，確認這是個別狀況，還是評分制度與凝聚力共同形成的模式。',color:'var(--cyan)'},
+      weber:{label:'動機 × 意義 × 處境',title:'先暫停使用「擺爛」',question:'當事人如何理解自己的責任與貢獻？',points:['他知道別人會收尾，所以選擇不投入？','他認為已完成原先約定的工作？','工作、照顧或健康問題讓他無法配合？','他的想法總被否定，最後退出討論？'],move:'理解不等於原諒；它讓我們更準確辨認動機，以及動機如何和制度條件結合。',color:'var(--purple)'}
+    };
+    const scales=[
+      {tag:'微視社會學',title:'一場小組會議',text:'鏡頭貼近現場：誰先說話、誰保持沉默、誰打斷別人？組員如何協商分工，「擺爛」這個標籤又怎麼形成？',focus:['互動','溝通','標籤','小團體決策'],color:'var(--coral)'},
+      {tag:'連接微觀與巨觀',title:'沉默不是飄在空中',text:'一位學生在會議中沉默，可能連著過去的教育經驗、經濟壓力、團體權力與評分制度。制度也必須透過一次次互動，才會真正影響人。',focus:['個人經驗','團體關係','制度條件'],color:'var(--gold)'},
+      {tag:'巨視社會學',title:'整套大學教育制度',text:'鏡頭拉遠：為什麼大學普遍使用分組報告？共同評分產生什麼結果？學生的家庭與經濟條件，如何影響他能投入的時間？',focus:['教育制度','階級','社會結構','長期變遷'],color:'var(--cyan)'}
+    ];
+
+    const toolButtons=document.querySelector('.tool-buttons'),toolDetail=document.querySelector('#toolDetail');
+    function showTool(i){[...toolButtons.children].forEach((b,n)=>{b.classList.toggle('active',n===i);b.setAttribute('aria-selected',n===i)});const t=tools[i];toolDetail.innerHTML=`<div class="num">0${i+1}</div><h3>${t.name}</h3><div class="game">如果社會是一場多人遊戲：${t.game}</div><p>${t.text}</p>`}
+    tools.forEach((t,i)=>{const b=document.createElement('button');b.className='tool-btn';b.role='tab';b.textContent=t.name;b.onclick=()=>showTool(i);toolButtons.appendChild(b)});showTool(0);
+
+    const thinkerTabs=document.querySelector('#thinkerTabs'),thinkerPanel=document.querySelector('#thinkerPanel');
+    function showThinker(i){const t=thinkers[i];[...thinkerTabs.children].forEach((b,n)=>{b.setAttribute('aria-selected',n===i);b.style.setProperty('--tab-color',thinkers[n].color)});thinkerPanel.style.setProperty('--thinker-color',t.color);thinkerPanel.innerHTML=`<div class="thinker-symbol"><div><div class="big">${t.symbol}</div><small>${t.scene}</small></div></div><div class="thinker-copy"><p class="kicker">${t.name}</p><h3>${t.scene}</h3><div class="question">${t.question}</div><p>${t.text}</p><div class="tags">${t.tags.map(x=>`<span>${x}</span>`).join('')}</div></div>`}
+    thinkers.forEach((t,i)=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.textContent=t.name;b.onclick=()=>showThinker(i);thinkerTabs.appendChild(b)});showThinker(0);
+
+    const lensTabs=document.querySelector('#lensTabs'),lensResult=document.querySelector('#lensResult');
+    function showLens(key){const l=lenses[key];[...lensTabs.children].forEach(b=>{const on=b.dataset.key===key;b.setAttribute('aria-selected',on);b.style.background=on?l.color:'';b.style.color=on?'#07121c':''});lensResult.style.setProperty('--lens-color',l.color);lensResult.innerHTML=`<div class="lens-label">${l.label}</div><h3>${l.title}</h3><p class="main-q">${l.question}</p><ul>${l.points.map(x=>`<li>${x}</li>`).join('')}</ul><div class="move">下一步：${l.move}</div>`}
+    thinkers.forEach(t=>{const b=document.createElement('button');b.className='tab';b.role='tab';b.dataset.key=t.id;b.textContent=t.name;b.onclick=()=>showLens(t.id);lensTabs.appendChild(b)});showLens('marx');
+
+    const cameraView=document.querySelector('#cameraView'),scaleRange=document.querySelector('#scaleRange');
+    function showScale(i){const s=scales[i];cameraView.style.setProperty('--scale-color',s.color);cameraView.innerHTML=`<span class="scale-badge">${s.tag}</span><h3>${s.title}</h3><p>${s.text}</p><div class="focus-list">${s.focus.map(x=>`<span>${x}</span>`).join('')}</div>`}scaleRange.oninput=e=>showScale(+e.target.value);showScale(0);
+
+    const zoomBtn=document.querySelector('#zoomBtn'),zoomStage=document.querySelector('#zoomStage');zoomBtn.onclick=()=>{const open=zoomStage.classList.toggle('open');zoomBtn.setAttribute('aria-expanded',open);zoomBtn.textContent=open?'收回個人視角':'把視角拉遠'};
+
+    const sections=[...document.querySelectorAll('main section')],dots=document.querySelector('.side-dots'),progress=document.querySelector('#progress'),sectionCount=document.querySelector('#sectionCount');
+    sections.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;a.setAttribute('aria-label',`${i+1}. ${s.dataset.title}`);dots.appendChild(a)});
+    function updateNav(){const y=scrollY+innerHeight*.42;let idx=0;sections.forEach((s,i)=>{if(s.offsetTop<=y)idx=i});[...dots.children].forEach((d,i)=>d.classList.toggle('active',i===idx));sectionCount.textContent=`${String(idx+1).padStart(2,'0')} / ${String(sections.length).padStart(2,'0')}`;const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max?scrollY/max*100:0)+'%'}
+    addEventListener('scroll',updateNav,{passive:true});addEventListener('resize',updateNav);updateNav();
+    addEventListener('keydown',e=>{if(['INPUT','BUTTON'].includes(document.activeElement.tagName))return;const current=[...dots.children].findIndex(d=>d.classList.contains('active'));if(e.key==='ArrowRight'||e.key==='PageDown'){e.preventDefault();sections[Math.min(current+1,sections.length-1)].scrollIntoView()}if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();sections[Math.max(current-1,0)].scrollIntoView()}});
+  </script>
+</body>
+</html>
