@@ -7,9 +7,9 @@ const tools = [
 ];
 
 const thinkers = [
-  {id:'marx', name:'馬克思', latin:'KARL MARX · 1818–1883', side:'right', color:'#d98b74', image:'assets/marx.webp', alt:'馬克思站在十九世紀工廠入口，身後是勞工與機器', action:'他先把工作分配表拿過來。', question:'工作是誰分配的？誰掌握決定權？最後的成果又算在誰身上？', text:'他把個人衝突放回生產關係，觀察誰擁有資源、誰提供勞動，以及成果如何分配。在工廠裡，勞工生產商品，擁有工廠、設備與資金的人卻掌握生產成果。', key:'最先尋找：權力、利益與衝突', tags:['生產關係','勞動','階級','權力','改變制度']},
-  {id:'durkheim', name:'涂爾幹', latin:'ÉMILE DURKHEIM · 1858–1917', side:'left', color:'#8fb3c8', image:'assets/durkheim.webp', alt:'涂爾幹在書房研究統計紀錄，窗外可見教堂與人群', action:'他說：「只看這一組還不夠。」', question:'如果只是個人問題，為什麼同樣的情況會在某些團體反覆出現？', text:'他收集更多小組資料，尋找規則不清、成員不熟、缺乏固定討論時間等共同條件。《自殺論》同樣從群體統計發現穩定差異，將極私人的行為放回社會原因。', key:'最先尋找：社會規律與社會整合', tags:['社會事實','規範','統計','群體連結','制度力量']},
-  {id:'weber', name:'韋伯', latin:'MAX WEBER · 1864–1920', side:'right', color:'#d4b37a', image:'assets/weber.webp', alt:'韋伯在書房與城市教堂背景前思考行動意義', action:'他把被稱為「擺爛」的組員找來。', question:'你覺得自己正在做什麼？這個選擇對你有什麼意義？', text:'他可能以為主要內容已經完成，也可能白天要工作，或曾經多次提出意見卻都被否決。韋伯先理解行動者如何解釋情境，再追問相似信念與行動如何累積成更大的制度結果。', key:'最先尋找：主觀意義與社會結果', tags:['Verstehen','主觀意義','動機','宗教倫理','因果解釋']}
+  {id:'marx', name:'馬克思', latin:'KARL MARX · 1818–1883', side:'right', color:'#d98b74', image:'assets/marx.webp', alt:'馬克思站在十九世紀工廠入口，身後是勞工與機器', action:'他要求打開分工表、群組紀錄與簡報版本紀錄。', question:'為什麼沒有勞動，卻能取得相同成果？', text:'他把報告視為一項共同生產：少數人的勞動創造內容，共同評分卻可能掩蓋勞動、決定權與成果並不平等。', points:['勞動：誰真正創造報告的價值？','權力：誰掌握母檔、資料、對外聯絡與決定權？','實踐：讓勞動透明、共同制定規則，必要時集體要求調整評分制度。'], key:'不只理解不平等，更要集體改變讓它持續的規則。', tags:['勞動','所有制','決定權','成果分配','實踐']},
+  {id:'durkheim', name:'涂爾幹', latin:'ÉMILE DURKHEIM · 1858–1917', side:'left', color:'#8fb3c8', image:'assets/durkheim.webp', alt:'涂爾幹在書房研究統計紀錄，窗外可見教堂與人群', action:'他向老師索取所有小組、不同課程與學期的資料。', question:'為什麼這種事情會在許多小組穩定、重複地發生？', text:'他先確認這是不是群體模式，再研究共同評分、團體規範、制裁機制與凝聚力，避免把反覆出現的現象只歸因於個人懶惰。', points:['社會事實：期限、組員人數與「能力強的人應多做」的默契，都在個人之外形成約束。','《自殺論》：比較地區與宗教群體，從穩定差異尋找社會原因。','實證社會學：把「現在學生都愛擺爛」轉成可觀察、比較與驗證的問題。'], key:'先找反覆出現的規律，再解釋背後的社會原因。', tags:['社會事實','外在性與約制性','群體規律','統計比較','實證社會學']},
+  {id:'weber', name:'韋伯', latin:'MAX WEBER · 1864–1920', side:'right', color:'#d4b37a', image:'assets/weber.webp', alt:'韋伯在書房與城市教堂背景前思考行動意義', action:'他搬一張椅子坐到組員旁邊，先詢問當事人。', question:'他明知道有任務，為什麼仍然不做？', text:'同樣是不回訊息，有人可能在占便宜，有人覺得自己沒有發言權，也有人根本不認為自己沒有貢獻。外在行為相同，主觀意義可能完全不同。', points:['理解法 Verstehen：先進入行動者的處境，理解責任與貢獻對他的意義。','因果解釋：再追問這個意義如何造成後續行動與結果。','《新教倫理與資本主義精神》：個人的宗教行動累積後，也可能形成更大的社會結果。'], key:'先理解行動的主觀意義，再解釋意義造成的社會結果。', tags:['Verstehen','主觀意義','行動動機','宗教倫理','因果解釋']}
 ];
 
 const pollExplanations = {
@@ -31,7 +31,6 @@ const fields = [
 
 const scales = [
   {tag:'微視社會學', title:'進入一次小組會議', text:'誰先說話、誰保持沉默、誰打斷別人？組員如何協商分工，「擺爛」這個標籤又怎麼形成？微視研究靠近互動、關係、溝通與小團體決策。', focus:['短時間','小空間','人際互動','標籤形成'], color:'#d98b74'},
-  {tag:'連接微視與巨視', title:'沉默不是飄在空中', text:'一位學生在會議中沉默，可能連著過去的教育經驗、經濟壓力、團體權力與評分制度；制度也必須透過一次次課堂與互動，才會實際影響人。', focus:['個人經驗','團體關係','制度條件'], color:'#f0d796'},
   {tag:'巨視社會學', title:'拉遠到整套大學制度', text:'為什麼大學普遍使用分組報告？共同評分產生什麼結果？打工、家庭與經濟條件如何影響投入時間？巨視研究社會結構、制度、階級與長期變遷。', focus:['長時間','大空間','教育制度','社會結構'], color:'#8fb3c8'}
 ];
 
@@ -93,7 +92,7 @@ function showThinker(index) {
   });
   thinkerPanel.classList.toggle('side-right', thinker.side === 'right');
   thinkerPanel.style.setProperty('--thinker-color', thinker.color);
-  thinkerPanel.innerHTML = `<img src="${thinker.image}" alt="${thinker.alt}" loading="lazy"><div class="panel-shade"></div><div class="thinker-copy"><div class="latin">${thinker.latin}</div><h3>${thinker.name}</h3><div class="case-action">${thinker.action}</div><div class="question">${thinker.question}</div><p>${thinker.text}</p><strong class="thinker-key">${thinker.key}</strong><div class="tags">${thinker.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
+  thinkerPanel.innerHTML = `<img src="${thinker.image}" alt="${thinker.alt}" loading="lazy"><div class="panel-shade"></div><div class="thinker-copy"><div class="latin">${thinker.latin}</div><h3>${thinker.name}</h3><div class="case-action">${thinker.action}</div><div class="question">${thinker.question}</div><p>${thinker.text}</p><ol class="thinker-points">${thinker.points.map(point => `<li>${point}</li>`).join('')}</ol><strong class="thinker-key">${thinker.key}</strong><div class="tags">${thinker.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
 }
 thinkers.forEach((thinker, index) => {
   const button = document.createElement('button');
@@ -129,10 +128,13 @@ showField(1);
 const cameraView = document.querySelector('#cameraView');
 const scaleRange = document.querySelector('#scaleRange');
 const macroLayer = document.querySelector('#macroLayer');
-function showScale(index) {
+function showScale(value) {
+  const ratio = Math.max(0, Math.min(100, value)) / 100;
+  const index = ratio < .5 ? 0 : 1;
   const scale = scales[index];
   cameraView.style.setProperty('--scale-color', scale.color);
-  macroLayer.style.opacity = index / 2;
+  macroLayer.style.opacity = ratio;
+  scaleRange.setAttribute('aria-valuetext', scale.tag);
   cameraView.innerHTML = `<span class="scale-badge">${scale.tag}</span><h3>${scale.title}</h3><p>${scale.text}</p><div class="focus-list">${scale.focus.map(item => `<span>${item}</span>`).join('')}</div>`;
 }
 scaleRange.addEventListener('input', event => showScale(Number(event.target.value)));
