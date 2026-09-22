@@ -3,13 +3,13 @@ const tools = [
   {name:'社會結構', game:'角色、位置與資源配置', text:'企業提供資源並制定評選標準；學生提出申請、接受評選，也彼此競爭。雙方一開始就擁有不同的資源與決定權。'},
   {name:'文化', game:'明文規則之外的共同默契', text:'什麼樣的表達會被認為「有夢想、有潛力、值得投資」？公開規則之外，也可能存在一套沒有說明的夢想想像。'},
   {name:'權力', game:'誰能制定規則與分配資源', text:'掌握經費、評選標準與選擇權的一方，也能決定哪些夢想得到實踐、公開展示與社會認可的機會。'},
-  {name:'社會體系', game:'角色、資源與行動如何連動', text:'企業提供資金、導師與品牌聲望；學生投入時間、產出成果；企業展示社會責任；大眾又把「入選」視為背書，逐漸形成循環。'}
+  {name:'社會體系', game:'角色、資源與行動如何連動', text:'把鏡頭再拉遠，就能觀察企業資金與品牌、大學教育、學生履歷和社會認可如何彼此影響。'}
 ];
 
 const thinkers = [
-  {id:'marx', name:'馬克思', latin:'KARL MARX · 1818–1883', side:'right', color:'#d98b74', image:'assets/marx.webp', alt:'馬克思站在十九世紀工廠入口，身後是勞工與機器', action:'他要求打開分工表、群組紀錄與簡報版本紀錄。', question:'為什麼沒有勞動，卻能取得相同成果？', text:'他把報告視為一項共同生產：少數人的勞動創造內容，共同評分卻可能掩蓋勞動、決定權與成果並不平等。', points:['勞動：誰真正創造報告的價值？','權力：誰掌握母檔、資料、對外聯絡與決定權？','實踐：讓勞動透明、共同制定規則，必要時集體要求調整評分制度。'], key:'不只理解不平等，更要集體改變讓它持續的規則。', tags:['勞動','所有制','決定權','成果分配','實踐']},
-  {id:'durkheim', name:'涂爾幹', latin:'ÉMILE DURKHEIM · 1858–1917', side:'left', color:'#8fb3c8', image:'assets/durkheim.webp', alt:'涂爾幹在書房研究統計紀錄，窗外可見教堂與人群', action:'他向老師索取所有小組、不同課程與學期的資料。', question:'為什麼這種事情會在許多小組穩定、重複地發生？', text:'他先確認這是不是群體模式，再研究共同評分、團體規範、制裁機制與凝聚力，避免把反覆出現的現象只歸因於個人懶惰。', points:['社會事實：期限、組員人數與「能力強的人應多做」的默契，都在個人之外形成約束。','《自殺論》：比較地區與宗教群體，從穩定差異尋找社會原因。','實證社會學：把「現在學生都愛擺爛」轉成可觀察、比較與驗證的問題。'], key:'先找反覆出現的規律，再解釋背後的社會原因。', tags:['社會事實','外在性與約制性','群體規律','統計比較','實證社會學']},
-  {id:'weber', name:'韋伯', latin:'MAX WEBER · 1864–1920', side:'right', color:'#d4b37a', image:'assets/weber.webp', alt:'韋伯在書房與城市教堂背景前思考行動意義', action:'他搬一張椅子坐到組員旁邊，先詢問當事人。', question:'他明知道有任務，為什麼仍然不做？', text:'同樣是不回訊息，有人可能在占便宜，有人覺得自己沒有發言權，也有人根本不認為自己沒有貢獻。外在行為相同，主觀意義可能完全不同。', points:['理解法 Verstehen：先進入行動者的處境，理解責任與貢獻對他的意義。','因果解釋：再追問這個意義如何造成後續行動與結果。','《新教倫理與資本主義精神》：個人的宗教行動累積後，也可能形成更大的社會結果。'], key:'先理解行動的主觀意義，再解釋意義造成的社會結果。', tags:['Verstehen','主觀意義','行動動機','宗教倫理','因果解釋']}
+  {id:'marx', name:'馬克思', latin:'KARL MARX · 1818–1883', side:'right', color:'#d98b74', image:'assets/marx.webp', alt:'馬克思站在十九世紀工廠入口，身後是勞工與機器', action:'他要求打開分工表、群組紀錄與簡報版本紀錄。', question:'誰在勞動、誰能決定、誰取得成果？', text:'他把報告視為一項共同生產：四位組員的勞動創造內容，第五人沒有相應付出，卻因共同評分取得相同成果；掌握簡報母檔的人，也可能因此擁有最後決定權。', points:['勞動價值：商品價值來自勞工的勞動。','制度批判：《資本論》揭露掌握生產工具者如何占有勞動成果。','實踐：公開工作紀錄、共同制定規則，並爭取加入同儕互評。'], note:'分組報告不是資本主義工廠，擺爛者也不能直接等同資本家；這裡借用的是馬克思檢查勞動、控制權與成果分配的提問方式。', key:'不只理解不平等；馬克思更期待被壓迫者組織起來，以實踐甚至革命改變制度。', tags:['勞動','生產工具','控制權','成果分配','實踐']},
+  {id:'durkheim', name:'涂爾幹', latin:'ÉMILE DURKHEIM · 1858–1917', side:'left', color:'#8fb3c8', image:'assets/durkheim.webp', alt:'涂爾幹在書房研究統計紀錄，窗外可見教堂與人群', action:'他向老師索取其他小組、不同課程與學期的資料。', question:'這是不是反覆出現的群體模式？', text:'他會比較共同或個別評分、有無同儕互評、分工是否清楚，以及組員彼此熟不熟。若失聯與搭便車在某些條件下穩定重複，就不能只歸因於個人懶惰。', points:['社會事實：評分、期限與團體默契存在於個人之外，也會形成約束。','《自殺論》：比較不同宗教群體的自殺率，從凝聚力尋找社會原因。','實證方法：把印象轉成可觀察、比較與檢驗的問題。'], note:'其他組員共同責備搭便車者，也反映團體對「負責任」的集體意識；表達不滿，是團體維護規範的一種方式。', key:'研究評分制度、團體規範、凝聚力與制裁機制，而不是把問題全留給個人。', tags:['社會事實','集體意識','群體規律','統計比較','實證方法']},
+  {id:'weber', name:'韋伯', latin:'MAX WEBER · 1864–1920', side:'right', color:'#d4b37a', image:'assets/weber.webp', alt:'韋伯在書房與城市教堂背景前思考行動意義', action:'他搬一張椅子坐到組員旁邊，先詢問當事人。', question:'你為什麼認為不交工作也是一個選擇？', text:'同樣是不回訊息，有人計算其他人一定會做完，有人覺得自己沒有參與空間，也有人能力不足或遇到生活壓力卻不敢說明。外在行為相同，主觀意義可能完全不同。', points:['理解法 Verstehen：先進入行動者的處境，理解行動對他的意義。','因果解釋：再分析這個意義如何引導行動並造成後續結果。','《新教倫理與資本主義精神》：宗教行動累積後，也可能形成理性的工作倫理。'], note:'理解不等於原諒。即使他只是想用最低成本拿到相同分數，這仍是需要解釋的社會行動：他預期共同評分會保護自己，也預期其他人會收拾。', key:'先理解人賦予行動的意義，再解釋這些行動產生的社會結果。', tags:['Verstehen','主觀意義','社會行動','宗教倫理','因果解釋']}
 ];
 
 const pollExplanations = {
@@ -92,7 +92,7 @@ function showThinker(index) {
   });
   thinkerPanel.classList.toggle('side-right', thinker.side === 'right');
   thinkerPanel.style.setProperty('--thinker-color', thinker.color);
-  thinkerPanel.innerHTML = `<img src="${thinker.image}" alt="${thinker.alt}" loading="lazy"><div class="panel-shade"></div><div class="thinker-copy"><div class="latin">${thinker.latin}</div><h3>${thinker.name}</h3><div class="case-action">${thinker.action}</div><div class="question">${thinker.question}</div><p>${thinker.text}</p><ol class="thinker-points">${thinker.points.map(point => `<li>${point}</li>`).join('')}</ol><strong class="thinker-key">${thinker.key}</strong><div class="tags">${thinker.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
+  thinkerPanel.innerHTML = `<img src="${thinker.image}" alt="${thinker.alt}" loading="lazy"><div class="panel-shade"></div><div class="thinker-copy"><div class="latin">${thinker.latin}</div><h3>${thinker.name}</h3><div class="case-action">${thinker.action}</div><div class="question">${thinker.question}</div><p>${thinker.text}</p><ol class="thinker-points">${thinker.points.map(point => `<li>${point}</li>`).join('')}</ol><p class="thinker-note">${thinker.note}</p><strong class="thinker-key">${thinker.key}</strong><div class="tags">${thinker.tags.map(tag => `<span>${tag}</span>`).join('')}</div></div>`;
 }
 thinkers.forEach((thinker, index) => {
   const button = document.createElement('button');
